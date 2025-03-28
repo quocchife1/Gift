@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Consent</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: rgba(0, 0, 0, 0.1); padding: 20px; }
+        .cookie-container { background: white; padding: 5%; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); max-width: 450px; width: 100%; text-align: left; position: relative; }
+        .cookie-container h1 { font-size: 24px; margin-bottom: 10px; }
+        .cookie-container p { font-size: 16px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        .buttons { display: flex; justify-content: center; }
+        button { padding: 12px 20px; border: none; cursor: pointer; font-size: 16px; border-radius: 5px; width: 100%; max-width: 200px; }
+        .accept { background: #000; color: white; }
+    </style>
+</head>
+<body>
+    <div class="cookie-container">
+        <h1>Cookies settings</h1>
+        <p>We use cookies and similar technologies to personalize content, measure ads, and improve your experience. By clicking accept, you agree to our Cookies Policy.</p>
+        <div class="buttons">
+            <button class="accept" onclick="acceptCookies()"><b>Accept</b></button>
+        </div>
+    </div>
+    <script>
+        function acceptCookies() {
+            window.location.href = 'choose.html';
+        }
+    </script>
+</body>
+</html>

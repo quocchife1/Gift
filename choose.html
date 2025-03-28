@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Path</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { display: flex; flex-direction: column; height: 100vh; overflow: hidden; position: relative; }
+        .columns { display: flex; flex: 1; width: 100%; }
+        .column { width: 50%; display: flex; justify-content: center; align-items: center; font-size: 2em; font-weight: bold; cursor: pointer; transition: opacity 0.3s ease; }
+        .left { background-color: pink; }
+        .right { background-color: black; color: white; }
+        .overlay-text { position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%); font-size: 1.2em; background: rgba(255, 255, 255, 1); padding: 10px; border-radius: 5px; text-align: center; }
+        .video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; }
+        video { width: 100%; height: 100%; object-fit: cover; }
+        .note { position: absolute; bottom: 10px; left: 10px; font-size: 0.9em; color: gray; }
+
+        @media (max-width: 768px) {
+            .columns { flex-direction: column; }
+            .column { width: 100%; height: 50%; }
+            .overlay-text { font-size: 1em; top: 5%; }
+            .note { font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="columns">
+        <div class="column left" onclick="playVideo('side_eye.mp4')">Cute 😸</div>
+        <div class="column right" onclick="playVideo('side_eye.mp4')">Scary 👻</div>
+    </div>
+    <div class="overlay-text">
+        <h1>Hãy chọn đi</h1>    
+    </div>
+    <div class="video-container" id="videoContainer">
+        <video id="videoPlayer" autoplay loop playsinline></video>
+    </div>
+    <div class="note">Note: Volume below 75% is required </div>
+    <script>
+        function playVideo(src) {
+            const videoContainer = document.getElementById('videoContainer');
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = src;
+            videoContainer.style.display = 'block';
+            videoPlayer.play();
+        }
+    </script>
+</body>
+</html>
